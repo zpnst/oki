@@ -1,8 +1,8 @@
-yo x = 1;
-yo y = 41;
+oki x = 1;
+oki y = 41;
 
-yo add = define(x, y) {
+oki add = define(x, y) {
     x + y;
 };
 
-yo res = add(x, y);
+oki res = add(x, y);

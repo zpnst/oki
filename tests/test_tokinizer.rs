@@ -1,11 +1,11 @@
 use std::vec;
 
-use yo::tokinizer;
+use oki::tokinizer;
 
-use yo::token::Token;
+use oki::token::Token;
 
 const BASR_DIR: &'static str = "tests/cases";
-const TESTS_ERROR_PREFIX: &'static str = "yo :: [tests] :: ";
+const TESTS_ERROR_PREFIX: &'static str = "oki :: [tests] :: ";
 
 #[test]
 fn test_basic() {
@@ -13,17 +13,17 @@ fn test_basic() {
         .expect(&format!("{}read_file error", TESTS_ERROR_PREFIX).to_string());
 
     let token_vec: Vec<Token> = vec![
-        Token::YO,
+        Token::OKI,
         Token::IDENT("x".to_string()), 
         Token::ASSIGN, 
         Token::INTEGER("1".to_string()), 
         Token::SEMICOLON, 
-        Token::YO, 
+        Token::OKI, 
         Token::IDENT("y".to_string()), 
         Token::ASSIGN, 
         Token::INTEGER("41".to_string()), 
         Token::SEMICOLON, 
-        Token::YO, 
+        Token::OKI, 
         Token::IDENT("add".to_string()), 
         Token::ASSIGN, 
         Token::DEFINE, 
@@ -39,7 +39,7 @@ fn test_basic() {
         Token::SEMICOLON, 
         Token::RBRACE, 
         Token::SEMICOLON, 
-        Token::YO, 
+        Token::OKI, 
         Token::IDENT("res".to_string()), 
         Token::ASSIGN, 
         Token::IDENT("add".to_string()), 
@@ -69,7 +69,7 @@ fn test_2token() {
         Token::EQ, 
         Token::IDENT("y".to_string()), 
         Token::LBRACE, 
-        Token::YO, 
+        Token::OKI, 
         Token::IDENT("pred".to_string()), 
         Token::ASSIGN, 
         Token::IDENT("x".to_string()), 
@@ -88,5 +88,5 @@ fn test_2token() {
 }
 
 fn read_file(f: &str) -> Result<String, std::io::Error> {
-    std::fs::read_to_string(format!("{}/{}.yo", BASR_DIR, f))
+    std::fs::read_to_string(format!("{}/{}.oki", BASR_DIR, f))
 }

@@ -1,10 +1,10 @@
 use std::io;
 use std::io::Write;
 
-use yo::tokinizer;
+use oki::tokinizer;
 
 const REPL: &'static str = ">";
-const REPL_ERROR_PREFIX: &'static str = "yo :: [repl] :: ";
+const REPL_ERROR_PREFIX: &'static str = "oki :: [repl] :: ";
 
 fn main() -> io::Result<()> {
     'repl: loop {

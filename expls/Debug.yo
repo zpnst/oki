@@ -1,6 +1,6 @@
-yo x = 10;
-yo y = 11;
+oki x = 10;
+oki y = 11;
 
 if x == y {
-    yo pred = x != 42;
+    oki pred = x != 42;
 };

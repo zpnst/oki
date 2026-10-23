@@ -31,7 +31,7 @@ pub enum Token {
 
     // Keywords
     DEFINE,  // define
-    YO,      // yo
+    OKI,     // oki
     TRUE,    // true
     FALSE,   // false
     IF,      // if
