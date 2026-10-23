@@ -19,7 +19,17 @@ fn main() -> io::Result<()> {
             .expect(&format!("{}input reading error", REPL_ERROR_PREFIX).to_string());
         
         match input.as_str().trim() {
-            "quit" => break 'repl,
+            "/quit" => break 'repl,
+            s if s.starts_with("/file ") => {
+                let arg = &s[6..];
+                if let Ok(input) = std::fs::read_to_string(arg) {
+                    let mut lex = tokinizer::Tokinizer::new(input);
+                    let toks = lex.tokinize();
+                    println!("{:?}", toks)
+                } else {
+                    println!("{}file reading error", REPL_ERROR_PREFIX)
+                }
+            },
             _ => {
                 let mut lex = tokinizer::Tokinizer::new(input.clone());
                 let toks = lex.tokinize();
